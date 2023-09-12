@@ -34,27 +34,52 @@
       <p>Gennemsnitlige antal slag: <span id="result"></span></p>
     </main>
     <script>
+      // Funktionen calculateAverage beregner den gennemsnitlige mængde terningekast,
+      // der kræves for at ramme en bestemt kombination (dice1 og dice2) givet et antal forsøg (trials).
       function calculateAverage() {
+        // Henter værdien fra et HTML-element med id "dice1" og konverterer det til en heltal.
         var dice1 = parseInt(document.getElementById("dice1").value);
+
+        // Henter værdien fra et HTML-element med id "dice2" og konverterer det til en heltal.
         var dice2 = parseInt(document.getElementById("dice2").value);
+
+        // Henter antallet af forsøg fra et HTML-element med id "trials" og konverterer det til en heltal.
         var trials = parseInt(document.getElementById("trials").value);
 
+        // Initialiserer en variabel til at holde det totale antal terningekast for alle forsøg.
         var totalRolls = 0;
 
+        // Udfører en række forsøg (bestemt af variablen 'trials').
         for (var i = 0; i < trials; i++) {
+          // Initialiserer en variabel til at holde antallet af terningekast for det nuværende forsøg.
           var rolls = 0;
+
+          // Fortsætter med at rulle terningerne, indtil vi får den ønskede kombination (dice1 og dice2).
           while (true) {
+            // Øger antallet af terningekast med 1 for hver iteration.
             rolls++;
+
+            // Ruller den første terning og gemmer resultatet i roll1.
             var roll1 = Math.floor(Math.random() * 6) + 1;
+
+            // Ruller den anden terning og gemmer resultatet i roll2.
             var roll2 = Math.floor(Math.random() * 6) + 1;
+
+            // Tjekker, om de to terningekast svarer til de ønskede værdier (dice1 og dice2).
             if (roll1 === dice1 && roll2 === dice2) {
+              // Hvis ja, bryder vi ud af while-løkken.
               break;
             }
           }
+
+          // Lægger antallet af terningekast for dette forsøg til det samlede antal terningekast.
           totalRolls += rolls;
         }
 
+        // Beregner den gennemsnitlige mængde af terningekast krævet for at opnå den ønskede kombination.
         var averageRolls = totalRolls / trials;
+
+        // Viser det gennemsnitlige antal terningekast i et HTML-element med id "result".
         document.getElementById("result").textContent = averageRolls;
       }
     </script>

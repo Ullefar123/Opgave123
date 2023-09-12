@@ -52,21 +52,32 @@
       <p id="result"></p>
     </main>
     <script>
+      // Funktionen calculateSum beregner summen af tal mellem 1 og 1000,
+      // som er delelige med enten firstNumber eller secondNumber.
       function calculateSum() {
+        // Henter værdien fra et HTML-element med id "firstNumber", og konverterer den til en heltal.
         const firstNumber = parseInt(
           document.getElementById("firstNumber").value
         );
+
+        // Henter værdien fra et HTML-element med id "secondNumber", og konverterer den til en heltal.
         const secondNumber = parseInt(
           document.getElementById("secondNumber").value
         );
+
+        // Initialiserer en variabel sum til 0 for at opbevare det endelige resultat.
         let sum = 0;
 
+        // Løber gennem tal fra 1 til 1000.
         for (let i = 1; i <= 1000; i++) {
+          // Checker, om det aktuelle tal (i) er deleligt med enten firstNumber eller secondNumber.
           if (i % firstNumber === 0 || i % secondNumber === 0) {
+            // Hvis det er tilfældet, tilføjer vi tallet til sum.
             sum += i;
           }
         }
 
+        // Viser det endelige resultat i et HTML-element med id "result".
         document.getElementById("result").innerHTML = "Summen er: " + sum;
       }
     </script>
