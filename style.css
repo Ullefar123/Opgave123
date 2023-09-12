@@ -84,3 +84,15 @@ footer p {
   margin: 0;
   padding: 0.5rem;
 }
+
+.MathiasH2,
+.MathiasH1 {
+  color: #333;
+}
+.MathiasForm {
+  margin: 20px 0;
+}
+label,
+input {
+  margin-bottom: 10px;
+}
