@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Page 4</title>
   </head>
   <body>
     <header>
@@ -22,17 +22,78 @@
     <main>
       <section>
         <h1>Home</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptatum, quibusdam, quia, voluptate quod quos voluptas
-          exercitationem quae voluptatibus quas doloribus. Quisquam voluptatum,
-          quibusdam, quia, voluptate quod quos voluptas exercitationem quae
-          voluptatibus quas doloribus.
-        </p>
+        <h2>Tal 1</h2>
+        <h3 id="randNum1">0</h3>
+        <h2>Tal 2</h2>
+        <h3 id="randNum2">0</h3>
+        <h2>Resultat</h2>
+        <h3 id="resultTxt">Resultat</h3>
+      </section>
+      <section>
+        <div id="calcGrid">
+          <div class="calcBtn" onclick="matchUserInput(1)">*</div>
+          <div class="calcBtn" onclick="matchUserInput(2)">+</div>
+          <div class="calcBtn" onclick="matchUserInput(3)">-</div>
+          <div class="calcBtn" onclick="matchUserInput(4)">/</div>
+          <div class="calcBtn" onclick="matchUserInput(5)">%</div>
+          <div class="calcBtn" onclick="matchUserInput(6)">**</div>
+      </div>
       </section>
     </main>
+    <script>
+      const randNum1 = document.getElementById('randNum1');
+      const randNum2 = document.getElementById('randNum2');
+      const resultText = document.getElementById('resultTxt');
+      function randomNumber(){
+        return Math.floor(Math.random()*100)+1;
+      }
+      let number1 = randNum1.textContent = randomNumber();
+      let number2 = randNum2.textContent = randomNumber();
+      let result;
+
+      let random = Math.floor(Math.random()*6)+1;
+      function randomOperator(){
+        switch (random) {
+          case 1:
+            result = number1*number2
+            break;
+          case 2:
+            result = number1+number2;
+            break;
+          case 3: 
+            result = number1-number2;
+            break;
+          case 4:
+            result = number1/number2;
+            break;
+          case 5:
+            result = number1%number2;
+            break;
+          case 6:
+            result = number1**number2;
+            break;
+          default: 
+            result = number1+number2;
+        }
+        resultText.textContent = result;
+      }
+      randomOperator();
+
+      function matchUserInput(n){
+        if (n == random) {
+          alert("Korrekt! Du valgte den rigtige operator!")
+          location.reload();
+        } else {
+          alert("HAHA Forkert!!!")
+          location.reload();
+        }
+      }
+
+
+    </script>
+
     <footer>
-      <p>&copy; 2020</p>
+      <p>&copy; 2023</p>
     </footer>
   </body>
 </html>
