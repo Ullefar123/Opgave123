@@ -29,13 +29,24 @@
     </footer>
 
     <script>
+      //Beder om hvor mange rækker stjerne vi skal have. Gemmer den i "n"
       let n = prompt("Antal rækker af stjerner:");
+      //henter section med id "MajanWrapper" fra HTML
       let wrapper = document.getElementById("MajaWrapper");
 
+<<<<<<< Updated upstream
       for (i = 1; i <= n; i++) {
+=======
+      //første linje har altid 1 stjerne (i=1). Gentage funktionen indtil vi når "n" rækker (fra user input)
+      for (i=1; i <= n; i++) {
+        //skaber p element i HTML
+>>>>>>> Stashed changes
         var linje = document.createElement("p");
+        //skaber content til den p element. gentager "★" i gange.
         var node = document.createTextNode("★".repeat(i));
+        //appends content til p element
         linje.appendChild(node);
+        //appends p element til wrapper (section hentet fra HTML)
         wrapper.appendChild(linje);
       }
     </script>
