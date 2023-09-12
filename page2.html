@@ -23,27 +23,27 @@
       <h3 class="body3" id="result"></h3>
 
       <script>
-      // Spør brugeren om at indtaste et tal og gem det som en numerisk værdi i variablen 'n'.
-      let n = Number(prompt("Skriv et tal"));
-      // Udskriv værdien af 'n' til konsollen.
-      console.log(n);
-        
-      // Initialiser summen til 0.
-      let sum = 0;
-        
-      // Funktionen 'findSum' tager et tal 'n' som input.
-      function findSum(n){
-        // Start en for-løkke, der løber fra 0 til 'n'.
-        for (let index = 0; index <= n; index++) {
-              // Læg 'index' til summen.
-              sum += index;    
+        function sumOfDigits(number) {
+          let sum = 0;
+          let strNum = number.toString();
+          
+          for(let i = 0; i < strNum.length; i++) {
+            sum += parseInt(strNum[i]);
+          }
+          
+          return sum;
         }
-          // Opdater indholdet af HTML-elementet med id 'result' med den beregnede 'sum'.
-          document.getElementById("result").innerHTML = sum;       
+
+        // Get user input through prompt
+        let userInput = prompt("Please enter a number:");
+
+        // Validate the input to make sure it's a number
+        if (!isNaN(userInput)) {
+          let sum = sumOfDigits(parseInt(userInput));
+          alert(`The sum of the digits is: ${sum}`);
+        } else {
+          alert("That's not a valid number.");
         }
-        
-        // Kald funktionen 'findSum' med det indtastede tal 'n'.
-        findSum(n);
         </script>
     
     </main>
