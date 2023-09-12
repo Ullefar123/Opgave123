@@ -116,3 +116,30 @@ input {
   min-width: 100%;
   min-height: 100%;
 }
+
+#calcGrid {
+  display: grid;
+  width: 320px;
+  height: 80px;
+  grid-template-columns: 80px 80px 80px;
+  grid-template-rows: auto;
+  background-color: #4c4c4c;
+  color: white;
+}
+
+.calcBtn {
+  width: 100%;
+  height: 100%;
+  background-color: #4c4c4c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: 1px solid black;
+  font-size: 40px;
+}
+.calcBtn:hover {
+  cursor: pointer;
+  background-color: #222222;
+  outline: 2px solid lime;
+  z-index: 5;
+}
