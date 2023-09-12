@@ -23,19 +23,26 @@
       <h3 class="body3" id="result"></h3>
 
       <script>
-        let n = Number(prompt("write a number"));
-        console.log(n)
-        let sum = 0;
+      // Spør brugeren om at indtaste et tal og gem det som en numerisk værdi i variablen 'n'.
+      let n = Number(prompt("Skriv et tal"));
+      // Udskriv værdien af 'n' til konsollen.
+      console.log(n);
         
-        function findSum(n){
-            for (let index = 0; index <= n; index++) {
-                if (index % 7 == 0) continue;
-                sum += index;    
-            }
-            
-            document.getElementById("result").innerHTML = sum;       
+      // Initialiser summen til 0.
+      let sum = 0;
+        
+      // Funktionen 'findSum' tager et tal 'n' som input.
+      function findSum(n){
+        // Start en for-løkke, der løber fra 0 til 'n'.
+        for (let index = 0; index <= n; index++) {
+              // Læg 'index' til summen.
+              sum += index;    
+        }
+          // Opdater indholdet af HTML-elementet med id 'result' med den beregnede 'sum'.
+          document.getElementById("result").innerHTML = sum;       
         }
         
+        // Kald funktionen 'findSum' med det indtastede tal 'n'.
         findSum(n);
         </script>
     
