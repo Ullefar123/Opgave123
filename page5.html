@@ -21,17 +21,44 @@
       </nav>
     </header>
     <main>
-      <section>
-        <h1>Home</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptatum, quibusdam, quia, voluptate quod quos voluptas
-          exercitationem quae voluptatibus quas doloribus. Quisquam voluptatum,
-          quibusdam, quia, voluptate quod quos voluptas exercitationem quae
-          voluptatibus quas doloribus.
-        </p>
-      </section>
+      <h1>Gennemsnitlige antal slag for en ønsket terningekombination</h1>
+
+      <p>Indtast den første ternings værdi:</p>
+      <input id="dice1" type="number" min="1" max="6" />
+      <p>Indtast den anden ternings værdi:</p>
+      <input id="dice2" type="number" min="1" max="6" />
+      <p>Antal forsøg:</p>
+      <input id="trials" type="number" min="1" />
+      <br /><br />
+      <button onclick="calculateAverage()">Beregn gennemsnit</button>
+
+      <p>Gennemsnitlige antal slag: <span id="result"></span></p>
     </main>
+    <script>
+      function calculateAverage() {
+        var dice1 = parseInt(document.getElementById("dice1").value);
+        var dice2 = parseInt(document.getElementById("dice2").value);
+        var trials = parseInt(document.getElementById("trials").value);
+
+        var totalRolls = 0;
+
+        for (var i = 0; i < trials; i++) {
+          var rolls = 0;
+          while (true) {
+            rolls++;
+            var roll1 = Math.floor(Math.random() * 6) + 1;
+            var roll2 = Math.floor(Math.random() * 6) + 1;
+            if (roll1 === dice1 && roll2 === dice2) {
+              break;
+            }
+          }
+          totalRolls += rolls;
+        }
+
+        var averageRolls = totalRolls / trials;
+        document.getElementById("result").textContent = averageRolls;
+      }
+    </script>
     <footer>
       <p>&copy; 2020</p>
     </footer>
