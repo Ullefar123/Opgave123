@@ -96,3 +96,11 @@ label,
 input {
   margin-bottom: 10px;
 }
+
+#MajaWrapper > p {
+  color: rgb(245, 126, 0);
+}
+
+.body3 {
+  text-align: center;
+}
