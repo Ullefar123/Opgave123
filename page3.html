@@ -21,19 +21,25 @@
       </nav>
     </header>
     <main>
-      <section>
-        <h1>Home</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptatum, quibusdam, quia, voluptate quod quos voluptas
-          exercitationem quae voluptatibus quas doloribus. Quisquam voluptatum,
-          quibusdam, quia, voluptate quod quos voluptas exercitationem quae
-          voluptatibus quas doloribus.
-        </p>
+      <section id="wrapper">
+        <h1>Stjerner</h1>
+        
       </section>
     </main>
     <footer>
       <p>&copy; 2020</p>
     </footer>
+
+    <script>
+      let n = prompt("Antal rækker af stjerner:");
+      let wrapper = document.getElementById("wrapper");
+
+      for (i=1; i <= n; i++) {
+        var linje = document.createElement("p");
+        var node = document.createTextNode("★".repeat(i));
+        linje.appendChild(node);
+        wrapper.appendChild(linje);
+      }
+    </script>
   </body>
 </html>
