@@ -21,19 +21,28 @@
       </nav>
     </header>
     <main>
-      <section>
-        <h1>Home</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptatum, quibusdam, quia, voluptate quod quos voluptas
-          exercitationem quae voluptatibus quas doloribus. Quisquam voluptatum,
-          quibusdam, quia, voluptate quod quos voluptas exercitationem quae
-          voluptatibus quas doloribus.
-        </p>
-      </section>
+      <h3 class="body-h3" id="result"></h3>
+
+      <script>
+        let n = Number(prompt("write a number"));
+        console.log(n)
+        let sum = 0;
+        
+        function findSum(n){
+            for (let index = 0; index <= n; index++) {
+                if (index % 7 == 0) continue;
+                sum += index;    
+            }
+            
+            document.getElementById("result").innerHTML = sum;       
+        }
+        
+        findSum(n);
+        </script>
+    
     </main>
     <footer>
-      <p>&copy; 2020</p>
+      <p>&copy; 2023</p>
     </footer>
   </body>
 </html>
