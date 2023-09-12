@@ -119,8 +119,8 @@ input {
 
 #calcGrid {
   display: grid;
-  width: 320px;
-  height: 80px;
+  width: 240px;
+  height: 160px;
   grid-template-columns: 80px 80px 80px;
   grid-template-rows: auto;
   background-color: #4c4c4c;
