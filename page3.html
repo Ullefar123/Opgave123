@@ -20,9 +20,8 @@
       </nav>
     </header>
     <main>
-      <section id="MajaWrapper">
-        <h1>Stjerner</h1>
-        
+      <section style="text-align: center" id="MajaWrapper">
+        <h1 style="color: gold">★</h1>
       </section>
     </main>
     <footer>
@@ -33,7 +32,7 @@
       let n = prompt("Antal rækker af stjerner:");
       let wrapper = document.getElementById("MajaWrapper");
 
-      for (i=1; i <= n; i++) {
+      for (i = 1; i <= n; i++) {
         var linje = document.createElement("p");
         var node = document.createTextNode("★".repeat(i));
         linje.appendChild(node);
